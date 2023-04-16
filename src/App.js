@@ -9,22 +9,12 @@ import {
 import { IntlProvider } from "react-intl";
 import "./helpers/Firebase";
 import AppLocale from "./lang";
-import ColorSwitcher from "./components/common/ColorSwitcher";
-import NotificationContainer from "./components/common/react-notifications/NotificationContainer";
-import { isMultiColorActive, isDemo } from "./constants/defaultValues";
+import { isDemo } from "./constants/defaultValues";
 
-const ViewMain = React.lazy(() =>
-  import("./views")
-);
-const ViewApp = React.lazy(() =>
-  import( "./views/app")
-);
-const ViewUser = React.lazy(() =>
-  import("./views/user")
-);
-const ViewError = React.lazy(() =>
-  import("./views/error")
-);
+const ViewMain = React.lazy(() => import("./views"));
+const ViewApp = React.lazy(() => import("./views/app"));
+const ViewUser = React.lazy(() => import("./views/user"));
+const ViewError = React.lazy(() => import("./views/error"));
 
 const AuthRoute = ({ component: Component, authUser, ...rest }) => {
   return (
@@ -49,7 +39,7 @@ const AuthRoute = ({ component: Component, authUser, ...rest }) => {
 class App extends Component {
   constructor(props) {
     super(props);
-    document.body.classList.add("rounded")
+    document.body.classList.add("rounded");
   }
 
   render() {
@@ -63,13 +53,11 @@ class App extends Component {
           messages={currentAppLocale.messages}
         >
           <React.Fragment>
-            <NotificationContainer />
-            {isMultiColorActive && <ColorSwitcher />}
             <Suspense fallback={<div className="loading" />}>
               <Router>
                 <Switch>
                   <AuthRoute
-                    path="/app"
+                    path="/doctors/app"
                     authUser={loginUser}
                     component={ViewApp}
                   />
@@ -100,8 +88,8 @@ class App extends Component {
 
 const mapStateToProps = ({ authUser, settings }) => {
   const { user: loginUser } = authUser;
-  const {locale} = settings;
-  return { loginUser ,locale};
+  const { locale } = settings;
+  return { loginUser, locale };
 };
 const mapActionsToProps = {};
 
