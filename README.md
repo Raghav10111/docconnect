@@ -1,56 +1,70 @@
-# docconnect
-Create a medical clinic website for efficient appointment scheduling, time management, and patient care. Streamline the process, manage doctor schedules, and allow patients to view and manage their appointments. Cost-effective and user-friendly solution for the clinic and patients.
-Functional Requirements
-Patients can register / log in to the web application and can:
+# Getting Started with Create React App
 
-Book an appointment/doctor consultation online.
-Video consultation with Doctors.
-Hassle-free payments for the booked services.
-Doctors can log in to the web application and can:
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Accept appointments
-View Appointments
-The system should be giving minimal and relevant data only to the users
+## Available Scripts
 
-Use Case Flow
-1. Register User
-Preconditions: None
-Main flow:
-The use case starts when a user indicates that he wants to register.
-The system requests a name, email, phone, and password.
-The user enters a name, email, phone, and password.
-On user click/enter action, the server checks if this user is already registered.
-If yes, an error message is thrown.
-If no,then the user is registered successfully and the system starts a login session and displays the welcome page.
-Alternative Flows:
-If the email already exists, then the system displays a message and the use case goes back to step 2.
-If the user does not enter a required field, a message is displayed and the use case repeats step 3.
-2. Login User
-Preconditions: The user is registered.
-Main flow:
-The use case starts when a user indicates that he wants to login.
-The system requests the email and password.
-The user enters email and password.
-The system verifies the id, email and password against all registered users.
-The system starts a login session.
-Alternative Flows
-If the username is invalid, the use case goes back to step 2.
-If the password is invalid the system requests that the user re-enter the password. When the user enters another password the use case continues with step 4 using the original username and new password.
-3. Search Appointments and Consultations
-Preconditions: The user needs to be registered and Logged In.
-Main Flow:
-User heads to the home page where he can search for Booking Physical Appointments or Online Chat and Video Consultations under two different tabs.
-The User is First prompted to enter his Location (City).
-The search can be executed by clicking on common predefined Symptoms for Consultations and Specialities for Bookings or can search for Clinics / Doctors / Symptoms / Specialities through the search bar.
-A list of most relevant responses is Outputted which the user can click and book appointments, consultations.
-4 Book Appointment
-Preconditions: The user needs to be registered, Logged in and the User should have provided the Location in the initial prompt.
+In the project directory, you can run:
 
-Main Flow:
+### `yarn start`
 
-The user has two choices for which kind of appointment he wants.
-The user either clicks ‘Consult Doctors’ or ‘Book appointment’
-The user is then redirected to the ‘consult doctors’ page.
-Users are asked to enter the date and time of appointment.
-Users are then prompted to the payment gateway for successful completion of the booking.
-Now the user has successfully booked the appointment.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
+
+### `yarn test`
+
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `yarn build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `yarn eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `yarn build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
